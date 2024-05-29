@@ -1,4 +1,9 @@
-# A Java port of Andrej Karpathy's llama2.c
+# Java 8 port and verbose version of llama2.java
+
+Make this very wordy and verbose
+Also implement with Java8 for pure research purposes
+
+## A Java port of Andrej Karpathy's llama2.c (original document)
 
 ****Check the successor of this project: [Llama3.java](https://github.com/mukel/llama3.java): Practical Llama (3) inference in a single Java file, with additional features, including a `--chat` mode.**
 
