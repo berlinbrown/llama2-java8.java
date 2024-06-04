@@ -27,3 +27,7 @@ replay_pid*
 *.bin
 
 target
+
+*.pyc
+
+TinyStories_all_data
