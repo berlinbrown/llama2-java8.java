@@ -1,0 +1,2842 @@
+Java source files: Llama2.java
+Java .class files:  target/classes/Llama2.class
+make: Nothing to be done for `compile'.
+From Llama2 At Transformer - checkpoint_path=stories15M.bin
+
+Entering constructor for transform => loading file checkpoint_path = stories15M.bin
+Tranform file => 60816028 bytes (about 60mb)
+[Config ]
+[Config ] - dim = 288
+[Config ] - n_layers= 6
+[Config ] = Config{dim=288, hidden_dim=768, n_layers=6, n_heads=6, n_kv_heads=6, vocab_size=32000, seq_len=256, shared_weights=true, head_size=48}
+Config{dim=288, hidden_dim=768, n_layers=6, n_heads=6, n_kv_heads=6, vocab_size=32000, seq_len=256, shared_weights=true, head_size=48}
+[Transformer] Weights configSize= 28
+
+From Llama2 At Tokenizer - checkpoint_path=tokenizer.bin ;  transformer.config.vocab_size=32000
+At the Tokenizer - vocab_size = 32000 against the (pytorch) tokenizer file= tokenizer.bin
+(4001) (pytorch file)  Since) vocab score -3742.0(4002) (pytorch file) Des) vocab score -3743.0(4003) (pytorch file) ube) vocab score -3744.0(4004) (pytorch file)  section) vocab score -3745.0(4005) (pytorch file)  gi) vocab score -3746.0(4006) (pytorch file) ford) vocab score -3747.0(4007) (pytorch file)  Ass) vocab score -3748.0(4008) (pytorch file) ainer) vocab score -3749.0(4009) (pytorch file) ttp) vocab score -3750.0(4010) (pytorch file)  behav) vocab score -3751.0(4011) (pytorch file) ports) vocab score -3752.0(4012) (pytorch file) draw) vocab score -3753.0(4013) (pytorch file) This) vocab score -3754.0(4014) (pytorch file) ranch) vocab score -3755.0(4015) (pytorch file) inding) vocab score -3756.0(4016) (pytorch file)  estab) vocab score -3757.0(4017) (pytorch file)  obtain) vocab score -3758.0(4018) (pytorch file) rich) vocab score -3759.0(4019) (pytorch file) licit) vocab score -3760.0(4020) (pytorch file) ев) vocab score -3761.0(4021) (pytorch file)  qual) vocab score -3762.0(4022) (pytorch file)  za) vocab score -3763.0(4023) (pytorch file)  har) vocab score -3764.0(4024) (pytorch file)  fac) vocab score -3765.0(4025) (pytorch file) aar) vocab score -3766.0(4026) (pytorch file) jet) vocab score -3767.0(4027) (pytorch file) icles) vocab score -3768.0(4028) (pytorch file)  Aus) vocab score -3769.0(4029) (pytorch file)  hor) vocab score -3770.0(4030) (pytorch file)  remov) vocab score -3771.0(4031) (pytorch file)  wie) vocab score -3772.0(4032) (pytorch file) Client) vocab score -3773.0(4033) (pytorch file)  natur) vocab score -3774.0(4034) (pytorch file) hip) vocab score -3775.0(4035) (pytorch file) Sub) vocab score -3776.0(4036) (pytorch file)  random) vocab score -3777.0(4037) (pytorch file) DF) vocab score -3778.0(4038) (pytorch file)  area) vocab score -3779.0(4039) (pytorch file) tag) vocab score -3780.0(4040) (pytorch file) Pr) vocab score -3781.0(4041) (pytorch file)  Ital) vocab score -3782.0(4042) (pytorch file)  roku) vocab score -3783.0(4043) (pytorch file) nofollow) vocab score -3784.0(4044) (pytorch file) *}) vocab score -3785.0(4045) (pytorch file)  others) vocab score -3786.0(4046) (pytorch file)  limit) vocab score -3787.0(4047) (pytorch file)  sil) vocab score -3788.0(4048) (pytorch file)  sav) vocab score -3789.0(4049) (pytorch file)  often) vocab score -3790.0===>
+===>
+>>> MAIN : [generate based on some sampe] mode = generate
+
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=1 -> token=9038
+[Decode --> ] (index in vocab from tranformer)  Once -> token=9038
+Once
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=9038 -> token=2501
+[Decode --> ] (index in vocab from tranformer)  upon -> token=2501
+ upon
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=2501 -> token=263
+[Decode --> ] (index in vocab from tranformer)  a -> token=263
+ a
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=263 -> token=931
+[Decode --> ] (index in vocab from tranformer)  time -> token=931
+ time
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=931 -> token=29892
+[Decode --> ] (index in vocab from tranformer) , -> token=29892
+,
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=29892 -> token=727
+[Decode --> ] (index in vocab from tranformer)  there -> token=727
+ there
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=727 -> token=471
+[Decode --> ] (index in vocab from tranformer)  was -> token=471
+ was
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=471 -> token=263
+[Decode --> ] (index in vocab from tranformer)  a -> token=263
+ a
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=263 -> token=4802
+[Decode --> ] (index in vocab from tranformer)  big -> token=4802
+ big
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=4802 -> token=3699
+[Decode --> ] (index in vocab from tranformer)  house -> token=3699
+ house
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=3699 -> token=411
+[Decode --> ] (index in vocab from tranformer)  with -> token=411
+ with
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=411 -> token=263
+[Decode --> ] (index in vocab from tranformer)  a -> token=263
+ a
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=263 -> token=4802
+[Decode --> ] (index in vocab from tranformer)  big -> token=4802
+ big
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=4802 -> token=1277
+[Decode --> ] (index in vocab from tranformer)  por -> token=1277
+ por
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=1277 -> token=305
+[Decode --> ] (index in vocab from tranformer) ch -> token=305
+ch
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=305 -> token=29889
+[Decode --> ] (index in vocab from tranformer) . -> token=29889
+.
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=29889 -> token=512
+[Decode --> ] (index in vocab from tranformer)  In -> token=512
+ In
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=512 -> token=278
+[Decode --> ] (index in vocab from tranformer)  the -> token=278
+ the
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=278 -> token=1277
+[Decode --> ] (index in vocab from tranformer)  por -> token=1277
+ por
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=1277 -> token=305
+[Decode --> ] (index in vocab from tranformer) ch -> token=305
+ch
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=305 -> token=29892
+[Decode --> ] (index in vocab from tranformer) , -> token=29892
+,
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=29892 -> token=727
+[Decode --> ] (index in vocab from tranformer)  there -> token=727
+ there
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=727 -> token=10600
+[Decode --> ] (index in vocab from tranformer)  lived -> token=10600
+ lived
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=10600 -> token=263
+[Decode --> ] (index in vocab from tranformer)  a -> token=263
+ a
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=263 -> token=17173
+[Decode --> ] (index in vocab from tranformer)  wealth -> token=17173
+ wealth
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=17173 -> token=29891
+[Decode --> ] (index in vocab from tranformer) y -> token=29891
+y
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=29891 -> token=767
+[Decode --> ] (index in vocab from tranformer)  man -> token=767
+ man
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=767 -> token=29889
+[Decode --> ] (index in vocab from tranformer) . -> token=29889
+.
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=29889 -> token=940
+[Decode --> ] (index in vocab from tranformer)  He -> token=940
+ He
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=940 -> token=750
+[Decode --> ] (index in vocab from tranformer)  had -> token=750
+ had
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=750 -> token=1784
+[Decode --> ] (index in vocab from tranformer)  many -> token=1784
+ many
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=1784 -> token=304
+[Decode --> ] (index in vocab from tranformer)  to -> token=304
+ to
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=304 -> token=952
+[Decode --> ] (index in vocab from tranformer) ys -> token=952
+ys
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=952 -> token=322
+[Decode --> ] (index in vocab from tranformer)  and -> token=322
+ and
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=322 -> token=7575
+[Decode --> ] (index in vocab from tranformer)  nice -> token=7575
+ nice
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=7575 -> token=2712
+[Decode --> ] (index in vocab from tranformer)  things -> token=2712
+ things
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=2712 -> token=29889
+[Decode --> ] (index in vocab from tranformer) . -> token=29889
+.
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=29889 -> token=940
+[Decode --> ] (index in vocab from tranformer)  He -> token=940
+ He
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=940 -> token=884
+[Decode --> ] (index in vocab from tranformer)  also -> token=884
+ also
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=884 -> token=750
+[Decode --> ] (index in vocab from tranformer)  had -> token=750
+ had
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=750 -> token=263
+[Decode --> ] (index in vocab from tranformer)  a -> token=263
+ a
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=263 -> token=4802
+[Decode --> ] (index in vocab from tranformer)  big -> token=4802
+ big
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=4802 -> token=11203
+[Decode --> ] (index in vocab from tranformer)  dog -> token=11203
+ dog
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=11203 -> token=29889
+[Decode --> ] (index in vocab from tranformer) . -> token=29889
+.
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=29889 -> token=450
+[Decode --> ] (index in vocab from tranformer)  The -> token=450
+ The
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=450 -> token=11203
+[Decode --> ] (index in vocab from tranformer)  dog -> token=11203
+ dog
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=11203 -> token=23289
+[Decode --> ] (index in vocab from tranformer)  liked -> token=23289
+ liked
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=23289 -> token=304
+[Decode --> ] (index in vocab from tranformer)  to -> token=304
+ to
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=304 -> token=1708
+[Decode --> ] (index in vocab from tranformer)  play -> token=1708
+ play
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=1708 -> token=297
+[Decode --> ] (index in vocab from tranformer)  in -> token=297
+ in
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=297 -> token=278
+[Decode --> ] (index in vocab from tranformer)  the -> token=278
+ the
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=278 -> token=29413
+[Decode --> ] (index in vocab from tranformer)  yard -> token=29413
+ yard
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=29413 -> token=29889
+[Decode --> ] (index in vocab from tranformer) . -> token=29889
+.
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=29889 -> token=13
+[Decode --> ] (index in vocab from tranformer) <0x0A> -> token=13
+
+
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=13 -> token=6716
+[Decode --> ] (index in vocab from tranformer) One -> token=6716
+One
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=6716 -> token=2462
+[Decode --> ] (index in vocab from tranformer)  day -> token=2462
+ day
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=2462 -> token=29892
+[Decode --> ] (index in vocab from tranformer) , -> token=29892
+,
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=29892 -> token=278
+[Decode --> ] (index in vocab from tranformer)  the -> token=278
+ the
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=278 -> token=17173
+[Decode --> ] (index in vocab from tranformer)  wealth -> token=17173
+ wealth
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=17173 -> token=29891
+[Decode --> ] (index in vocab from tranformer) y -> token=29891
+y
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=29891 -> token=767
+[Decode --> ] (index in vocab from tranformer)  man -> token=767
+ man
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=767 -> token=4446
+[Decode --> ] (index in vocab from tranformer)  saw -> token=4446
+ saw
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=4446 -> token=278
+[Decode --> ] (index in vocab from tranformer)  the -> token=278
+ the
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=278 -> token=11203
+[Decode --> ] (index in vocab from tranformer)  dog -> token=11203
+ dog
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=11203 -> token=2734
+[Decode --> ] (index in vocab from tranformer)  running -> token=2734
+ running
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=2734 -> token=373
+[Decode --> ] (index in vocab from tranformer)  on -> token=373
+ on
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=373 -> token=278
+[Decode --> ] (index in vocab from tranformer)  the -> token=278
+ the
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=278 -> token=1277
+[Decode --> ] (index in vocab from tranformer)  por -> token=1277
+ por
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=1277 -> token=305
+[Decode --> ] (index in vocab from tranformer) ch -> token=305
+ch
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=305 -> token=29889
+[Decode --> ] (index in vocab from tranformer) . -> token=29889
+.
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=29889 -> token=940
+[Decode --> ] (index in vocab from tranformer)  He -> token=940
+ He
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=940 -> token=5131
+[Decode --> ] (index in vocab from tranformer)  wanted -> token=5131
+ wanted
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=5131 -> token=304
+[Decode --> ] (index in vocab from tranformer)  to -> token=304
+ to
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=304 -> token=367
+[Decode --> ] (index in vocab from tranformer)  be -> token=367
+ be
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=367 -> token=7875
+[Decode --> ] (index in vocab from tranformer)  friends -> token=7875
+ friends
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=7875 -> token=411
+[Decode --> ] (index in vocab from tranformer)  with -> token=411
+ with
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=411 -> token=278
+[Decode --> ] (index in vocab from tranformer)  the -> token=278
+ the
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=278 -> token=11203
+[Decode --> ] (index in vocab from tranformer)  dog -> token=11203
+ dog
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=11203 -> token=29889
+[Decode --> ] (index in vocab from tranformer) . -> token=29889
+.
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=29889 -> token=1105
+[Decode --> ] (index in vocab from tranformer)  So -> token=1105
+ So
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=1105 -> token=29892
+[Decode --> ] (index in vocab from tranformer) , -> token=29892
+,
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=29892 -> token=540
+[Decode --> ] (index in vocab from tranformer)  he -> token=540
+ he
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=540 -> token=2000
+[Decode --> ] (index in vocab from tranformer)  called -> token=2000
+ called
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=2000 -> token=278
+[Decode --> ] (index in vocab from tranformer)  the -> token=278
+ the
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=278 -> token=11203
+[Decode --> ] (index in vocab from tranformer)  dog -> token=11203
+ dog
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=11203 -> token=975
+[Decode --> ] (index in vocab from tranformer)  over -> token=975
+ over
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=975 -> token=304
+[Decode --> ] (index in vocab from tranformer)  to -> token=304
+ to
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=304 -> token=278
+[Decode --> ] (index in vocab from tranformer)  the -> token=278
+ the
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=278 -> token=1277
+[Decode --> ] (index in vocab from tranformer)  por -> token=1277
+ por
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=1277 -> token=305
+[Decode --> ] (index in vocab from tranformer) ch -> token=305
+ch
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=305 -> token=29889
+[Decode --> ] (index in vocab from tranformer) . -> token=29889
+.
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=29889 -> token=450
+[Decode --> ] (index in vocab from tranformer)  The -> token=450
+ The
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=450 -> token=11203
+[Decode --> ] (index in vocab from tranformer)  dog -> token=11203
+ dog
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=11203 -> token=2996
+[Decode --> ] (index in vocab from tranformer)  came -> token=2996
+ came
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=2996 -> token=17649
+[Decode --> ] (index in vocab from tranformer)  closer -> token=17649
+ closer
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=17649 -> token=322
+[Decode --> ] (index in vocab from tranformer)  and -> token=322
+ and
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=322 -> token=281
+[Decode --> ] (index in vocab from tranformer)  w -> token=281
+ w
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=281 -> token=351
+[Decode --> ] (index in vocab from tranformer) ag -> token=351
+ag
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=351 -> token=3192
+[Decode --> ] (index in vocab from tranformer) ged -> token=3192
+ged
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=3192 -> token=967
+[Decode --> ] (index in vocab from tranformer)  its -> token=967
+ its
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=967 -> token=12464
+[Decode --> ] (index in vocab from tranformer)  tail -> token=12464
+ tail
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=12464 -> token=29889
+[Decode --> ] (index in vocab from tranformer) . -> token=29889
+.
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=29889 -> token=450
+[Decode --> ] (index in vocab from tranformer)  The -> token=450
+ The
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=450 -> token=17173
+[Decode --> ] (index in vocab from tranformer)  wealth -> token=17173
+ wealth
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=17173 -> token=29891
+[Decode --> ] (index in vocab from tranformer) y -> token=29891
+y
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=29891 -> token=767
+[Decode --> ] (index in vocab from tranformer)  man -> token=767
+ man
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=767 -> token=471
+[Decode --> ] (index in vocab from tranformer)  was -> token=471
+ was
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=471 -> token=9796
+[Decode --> ] (index in vocab from tranformer)  happy -> token=9796
+ happy
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=9796 -> token=29889
+[Decode --> ] (index in vocab from tranformer) . -> token=29889
+.
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=29889 -> token=13
+[Decode --> ] (index in vocab from tranformer) <0x0A> -> token=13
+
+
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=13 -> token=1576
+[Decode --> ] (index in vocab from tranformer) The -> token=1576
+The
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=1576 -> token=17173
+[Decode --> ] (index in vocab from tranformer)  wealth -> token=17173
+ wealth
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=17173 -> token=29891
+[Decode --> ] (index in vocab from tranformer) y -> token=29891
+y
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=29891 -> token=767
+[Decode --> ] (index in vocab from tranformer)  man -> token=767
+ man
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=767 -> token=322
+[Decode --> ] (index in vocab from tranformer)  and -> token=322
+ and
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=322 -> token=278
+[Decode --> ] (index in vocab from tranformer)  the -> token=278
+ the
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=278 -> token=11203
+[Decode --> ] (index in vocab from tranformer)  dog -> token=11203
+ dog
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=11203 -> token=5318
+[Decode --> ] (index in vocab from tranformer)  played -> token=5318
+ played
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=5318 -> token=373
+[Decode --> ] (index in vocab from tranformer)  on -> token=373
+ on
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=373 -> token=278
+[Decode --> ] (index in vocab from tranformer)  the -> token=278
+ the
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=278 -> token=1277
+[Decode --> ] (index in vocab from tranformer)  por -> token=1277
+ por
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=1277 -> token=305
+[Decode --> ] (index in vocab from tranformer) ch -> token=305
+ch
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=305 -> token=1432
+[Decode --> ] (index in vocab from tranformer)  every -> token=1432
+ every
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=1432 -> token=2462
+[Decode --> ] (index in vocab from tranformer)  day -> token=2462
+ day
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=2462 -> token=29889
+[Decode --> ] (index in vocab from tranformer) . -> token=29889
+.
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=29889 -> token=2688
+[Decode --> ] (index in vocab from tranformer)  They -> token=2688
+ They
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=2688 -> token=6350
+[Decode --> ] (index in vocab from tranformer)  ran -> token=6350
+ ran
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=6350 -> token=322
+[Decode --> ] (index in vocab from tranformer)  and -> token=322
+ and
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=322 -> token=12500
+[Decode --> ] (index in vocab from tranformer)  jump -> token=12500
+ jump
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=12500 -> token=287
+[Decode --> ] (index in vocab from tranformer) ed -> token=287
+ed
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=287 -> token=322
+[Decode --> ] (index in vocab from tranformer)  and -> token=322
+ and
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=322 -> token=750
+[Decode --> ] (index in vocab from tranformer)  had -> token=750
+ had
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=750 -> token=14568
+[Decode --> ] (index in vocab from tranformer)  lots -> token=14568
+ lots
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=14568 -> token=310
+[Decode --> ] (index in vocab from tranformer)  of -> token=310
+ of
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=310 -> token=2090
+[Decode --> ] (index in vocab from tranformer)  fun -> token=2090
+ fun
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=2090 -> token=29889
+[Decode --> ] (index in vocab from tranformer) . -> token=29889
+.
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=29889 -> token=2688
+[Decode --> ] (index in vocab from tranformer)  They -> token=2688
+ They
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=2688 -> token=892
+[Decode --> ] (index in vocab from tranformer)  were -> token=892
+ were
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=892 -> token=1900
+[Decode --> ] (index in vocab from tranformer)  best -> token=1900
+ best
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=1900 -> token=7875
+[Decode --> ] (index in vocab from tranformer)  friends -> token=7875
+ friends
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=7875 -> token=29889
+[Decode --> ] (index in vocab from tranformer) . -> token=29889
+.
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=29889 -> token=450
+[Decode --> ] (index in vocab from tranformer)  The -> token=450
+ The
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=450 -> token=17173
+[Decode --> ] (index in vocab from tranformer)  wealth -> token=17173
+ wealth
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=17173 -> token=29891
+[Decode --> ] (index in vocab from tranformer) y -> token=29891
+y
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=29891 -> token=767
+[Decode --> ] (index in vocab from tranformer)  man -> token=767
+ man
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=767 -> token=322
+[Decode --> ] (index in vocab from tranformer)  and -> token=322
+ and
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=322 -> token=278
+[Decode --> ] (index in vocab from tranformer)  the -> token=278
+ the
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=278 -> token=11203
+[Decode --> ] (index in vocab from tranformer)  dog -> token=11203
+ dog
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=11203 -> token=18012
+[Decode --> ] (index in vocab from tranformer)  loved -> token=18012
+ loved
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=18012 -> token=1009
+[Decode --> ] (index in vocab from tranformer)  their -> token=1009
+ their
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=1009 -> token=1277
+[Decode --> ] (index in vocab from tranformer)  por -> token=1277
+ por
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=1277 -> token=305
+[Decode --> ] (index in vocab from tranformer) ch -> token=305
+ch
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=305 -> token=322
+[Decode --> ] (index in vocab from tranformer)  and -> token=322
+ and
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=322 -> token=278
+[Decode --> ] (index in vocab from tranformer)  the -> token=278
+ the
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=278 -> token=1277
+[Decode --> ] (index in vocab from tranformer)  por -> token=1277
+ por
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=1277 -> token=305
+[Decode --> ] (index in vocab from tranformer) ch -> token=305
+ch
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=305 -> token=29889
+[Decode --> ] (index in vocab from tranformer) . -> token=29889
+.
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=29889 -> token=1126
+[Decode --> ] (index in vocab from tranformer)  And -> token=1126
+ And
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=1126 -> token=896
+[Decode --> ] (index in vocab from tranformer)  they -> token=896
+ they
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=896 -> token=10600
+[Decode --> ] (index in vocab from tranformer)  lived -> token=10600
+ lived
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=10600 -> token=2250
+[Decode --> ] (index in vocab from tranformer)  happ -> token=2250
+ happ
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=2250 -> token=2354
+[Decode --> ] (index in vocab from tranformer) ily -> token=2354
+ily
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=2354 -> token=3926
+[Decode --> ] (index in vocab from tranformer)  ever -> token=3926
+ ever
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=3926 -> token=1156
+[Decode --> ] (index in vocab from tranformer)  after -> token=1156
+ after
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+[Decode --> ] (index in vocab from tranformer) prev_token=1156 -> token=29889
+[Decode --> ] (index in vocab from tranformer) . -> token=29889
+.
+In forward operation :: p.n_layers: 6
+====, rmsnorm, matmul
+  [FORWARD] -->
+Enter looping l=0 for rms: 0.79829437
+  [FORWARD] -->
+Enter looping l=1 for rms: 1.1206539
+  [FORWARD] -->
+Enter looping l=2 for rms: 1.2406508
+  [FORWARD] -->
+Enter looping l=3 for rms: 1.5073558
+  [FORWARD] -->
+Enter looping l=4 for rms: 1.9347619
+  [FORWARD] -->
+Enter looping l=5 for rms: 1.9200841
+
