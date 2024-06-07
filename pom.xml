@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.mukel.berlin</groupId>
+    <artifactId>llama</artifactId>
+    <packaging>jar</packaging>
+    <version>1.1.5</version> 	    
+    <name>LLama Java8 Project</name>    
+    <properties>   
+        <!-- Clone some of settings from base config, use project specific settings for microservices -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven-compiler-plugin-version>3.3</maven-compiler-plugin-version>
+        <maven-surefire-plugin-version>2.12.4</maven-surefire-plugin-version>
+        <java.source.version>1.8</java.source.version>
+        <java.target.version>1.8</java.target.version>        
+        <org.springframework.version>4.3.8.RELEASE</org.springframework.version>         
+    </properties>        
+    <dependencies> 
+        
+        <!-- Test artifacts -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>								
+		</dependency> 			
+			
+    </dependencies>
+        
+    <build>
+        <sourceDirectory>src/main/java</sourceDirectory>
+        <testSourceDirectory>src/test/java</testSourceDirectory>
+       <resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**</include>
+				</includes>
+				<excludes>
+					<exclude>**/*.java</exclude>
+				</excludes>
+			</resource>
+		</resources>
+		<testResources>
+			<testResource>
+				<directory>src/test/resource</directory>
+				<includes>
+					<include>**</include>
+				</includes>
+				<excludes>
+					<exclude>**/*.java</exclude>
+				</excludes>
+			</testResource>
+		</testResources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin-version}</version>
+                <configuration>
+                    <source>${java.source.version}</source>
+                    <target>${java.target.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+                 
+        </plugins>
+    </build> 
+</project>

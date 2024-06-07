@@ -1,23 +1,32 @@
-///usr/bin/env jbang "$0" "$@" ; exit $?
-//JAVA 21
-//COMPILE_OPTIONS --enable-preview -source 21 --add-modules=jdk.incubator.vector
-//RUNTIME_OPTIONS --enable-preview --add-modules=jdk.incubator.vector
-//NATIVE_OPTIONS  --enable-preview --add-modules=jdk.incubator.vector --initialize-at-build-time=Llama2 -Dllama2.VectorAPI=false
+/**
+ * high level verbose bird eye view of this module.
+ * Thinking like a verbose java or procedural programming, taking this apart.
+ * 
+ * Based on  Andrej Karpathy, https://github.com/karpathy/llama2.c
+ * 
+ * You train a model in python with pytorch, save the weights and we run with llama.c or llama2, etc
+ * 
+ * See: https://github.com/marella/ctransformers
+ */
 
 /* Inference for Llama-2 Transformer model in pure Java */
+
+// Java8 version
 
 // ----------------------------------------------------------------------------
 // Transformer model
 
-import jdk.incubator.vector.FloatVector;
-import jdk.incubator.vector.VectorOperators;
-import jdk.incubator.vector.VectorSpecies;
-
-import java.io.BufferedInputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.Arena;
+
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.nio.FloatBuffer;
+import java.nio.MappedByteBuffer;
+import java.nio.channels.FileChannel;
+import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
+import java.nio.ByteOrder;
+
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
@@ -28,17 +37,26 @@ import java.nio.file.StandardOpenOption;
 import java.util.*;
 import java.util.stream.IntStream;
 
+/**
+ * Transformer dimension, layer, query heads
+ */
 final class Config {
-    final int dim; // transformer dimension
+
+    final int dim;        // transformer dimension
     final int hidden_dim; // for ffn layers
-    final int n_layers; // number of layers
-    final int n_heads; // number of query heads
+    final int n_layers;   // number of layers
+    final int n_heads;    // number of query heads
     final int n_kv_heads; // number of key/value heads (can be < query heads because of multiquery)
     final int vocab_size; // vocabulary size, usually 256 (byte-level)
-    final int seq_len; // max sequence length
+    final int seq_len;    // max sequence length
     final boolean shared_weights;
     final int head_size;
 
+    /**
+     * Load from config file format, read from bin stories.
+     * 
+     * @param buffer
+     */
     Config(ByteBuffer buffer) {
         this.dim = buffer.getInt();
         this.hidden_dim = buffer.getInt();
@@ -50,6 +68,12 @@ final class Config {
         this.seq_len = buffer.getInt();
         this.shared_weights = vocab_size > 0;
         this.head_size = dim / n_heads;
+
+        System.out.println("[Config ]");
+        System.out.println("[Config ] - dim = " + this.dim);
+        System.out.println("[Config ] - n_layers= " + this.n_layers);
+
+        System.out.println("[Config ] = " + this);
     }
 
     @Override
@@ -68,11 +92,16 @@ final class Config {
     }
 }
 
+/**
+ * Token embedding table with vocab_size.
+ */
 final class Weights {
+
     // token embedding table
     final FloatBuffer token_embedding_table; // (vocab_size, dim)
     // weights for rmsnorms
     final FloatBuffer[] rms_att_weight; // (layer, dim) rmsnorm weights
+
     // weights for matmuls. note dim == n_heads * head_size
     final FloatBuffer[] wq; // (layer, dim, n_heads * head_size)
     final FloatBuffer[] wk; // (layer, dim, n_kv_heads * head_size)
@@ -88,18 +117,21 @@ final class Weights {
     // (optional) classifier weights for the logits, on the last layer
     final FloatBuffer wcls; // (vocab_size, dim)
 
-    static FloatBuffer takeFloats(MemorySegment memorySegment, long[] position, int... dims) {
+    static FloatBuffer takeFloats(ByteBuffer byteBuffer, long[] position, int... dims) {
         long totalBytes = 1;
         for (int d : dims) {
             totalBytes *= d;
         }
         totalBytes *= Float.BYTES;
-        MemorySegment slice = memorySegment.asSlice(position[0], totalBytes);
+        
+        byteBuffer.position((int) position[0]);
+        ByteBuffer slice = byteBuffer.slice();
+        slice.limit((int) totalBytes);
         position[0] += totalBytes;
-        return slice.asByteBuffer().order(ByteOrder.LITTLE_ENDIAN).asFloatBuffer();
+        return slice.order(ByteOrder.LITTLE_ENDIAN).asFloatBuffer();
     }
 
-    static FloatBuffer[] takeArray(MemorySegment memorySegment, long[] position, int dim0, int... dims) {
+    static FloatBuffer[] takeArray(ByteBuffer memorySegment, long[] position, int dim0, int... dims) {
         FloatBuffer[] segments = new FloatBuffer[dim0];
         for (int i = 0; i < dim0; ++i) {
             segments[i] = takeFloats(memorySegment, position, dims);
@@ -110,7 +142,8 @@ final class Weights {
 // ----------------------------------------------------------------------------
 // initialization: read from checkpoint
 
-    Weights(Config config, MemorySegment memorySegment) {
+    Weights(Config config, ByteBuffer memorySegment) {
+
         long[] position = new long[]{0};
         this.token_embedding_table = takeFloats(memorySegment, position, config.vocab_size, config.dim);
         this.rms_att_weight = takeArray(memorySegment, position, config.n_layers, config.dim);
@@ -132,6 +165,7 @@ final class Weights {
 }
 
 final class RunState {
+
     // current wave of activations
     final float[] x; // activation at current time stamp (dim,)
     final float[] xb; // same, but inside a residual branch (dim,)
@@ -164,33 +198,60 @@ final class RunState {
     }
 }
 
+/**
+ * Transformer inner class
+ */
 final class Transformer {
-    final Config config; // the hyperparameters of the architecture (the blueprint)
-    final Weights weights; // the weights of the model
-    final RunState state; // buffers for the "wave" of activations in the forward pass
+
+    final Config config;    // the hyperparameters of the architecture (the blueprint)
+    final Weights weights;  // the weights of the model
+    final RunState state;   // buffers for the "wave" of activations in the forward pass
+
     // some more state needed to properly clean up the memory mapping (sigh)
-    final Arena memoryArena; // scope of the memory mapping
-    final MemorySegment data; // memory mapped data pointer
-    final long file_size; // size of the checkpoint file in bytes
+    //final Arena memoryArena;  // scope of the memory mapping
+    final ByteBuffer data; // memory mapped data pointer
+    final long file_size;     // size of the checkpoint file in bytes
 
     Transformer(String checkpoint_path) throws IOException {
+
+        System.out.println();
+        System.out.println("Entering constructor for transform => loading file checkpoint_path = " + checkpoint_path);
+
+        // Read the transform file, what is in it
         try (FileChannel fileChannel = FileChannel.open(Paths.get(checkpoint_path), StandardOpenOption.READ)) {
             this.file_size = fileChannel.size();
-            this.memoryArena = Arena.ofAuto();
-            MemorySegment mappedFile = fileChannel.map(FileChannel.MapMode.READ_ONLY, 0, this.file_size, this.memoryArena);
+            System.out.println("Tranform file => " + this.file_size + " bytes (about 60mb)");
+
+            //this.memoryArena = Arena.ofAuto();
+
+            // Region memory of file
+            final MappedByteBuffer mappedFile = fileChannel.map(FileChannel.MapMode.READ_ONLY, 0, 
+                            this.file_size);
+      
             this.data = mappedFile;
             int configSize = 7 * Integer.BYTES;
+
             // read in the config header
-            ByteBuffer configBuffer = mappedFile.asSlice(0, configSize).asByteBuffer().order(ByteOrder.LITTLE_ENDIAN);
+            final ByteBuffer configBuffer = mappedFile.asSlice(0, configSize).asByteBuffer().order(ByteOrder.LITTLE_ENDIAN);
             this.config = new Config(configBuffer);
             System.out.println(config);
             this.state = new RunState(config);
+
+            // What is weights?
             this.weights = new Weights(config, mappedFile.asSlice(configSize));
+
+            System.out.println("[Transformer] Weights configSize= " + configSize);
+            System.out.println();
+
         }
     }
 }
 
+/**
+ * Tokenizer, loads from the tokenizer file with the scores.
+ */
 final class Tokenizer {
+
     final String[] vocab;
     final float[] vocab_scores;
     final int vocab_size;
@@ -204,9 +265,11 @@ final class Tokenizer {
         this.vocab = new String[vocab_size];
         this.vocab_scores = new float[vocab_size];
 
+        System.out.println("At the Tokenizer - vocab_size = " + vocab_size + " against the (pytorch) tokenizer file= "+tokenizer_path);
+
         // read in the file
         try (FileChannel channel = FileChannel.open(Paths.get(tokenizer_path), StandardOpenOption.READ)) {
-            ByteBuffer tokBuffer = channel.map(FileChannel.MapMode.READ_ONLY, 0, channel.size());
+            final ByteBuffer tokBuffer = channel.map(FileChannel.MapMode.READ_ONLY, 0, channel.size());
             tokBuffer.order(ByteOrder.LITTLE_ENDIAN);
             this.max_token_length = tokBuffer.getInt();
             for (int i = 0; i < vocab_size; i++) {
@@ -215,8 +278,15 @@ final class Tokenizer {
                 byte[] bytes = new byte[len];
                 tokBuffer.get(bytes);
                 this.vocab[i] = new String(bytes, StandardCharsets.UTF_8);
+                if (i > 4000 && i < 4050) {
+                 System.out.print("(" + i+ ") (pytorch file) " + this.vocab[i] + ") vocab score " + this.vocab_scores[i]);
+                }
             }
         }
+
+        System.out.println("===>");
+        System.out.println("===>");
+
     }
 }
 
@@ -249,17 +319,33 @@ final class Sampler {
     }
 }
 
+/**
+ * LLama2 - dynamics of transformer - neural
+ * rmsnorm
+ */
 class Llama2 {
+
+    static final boolean USE_VECTOR_API = "true".equalsIgnoreCase(System.getProperty("llama2.VectorAPI", "true"));
 
 // ----------------------------------------------------------------------------
 // neural net blocks; the dynamics of the Transformer
 
+    /**
+     * Root mean square of neural network with weight and size.
+     * 
+     * In the context of language models (LLMs), "RMS" often refers to "Root Mean Square Error" (RMSE). 
+     * RMSE is a standard way to measure the error of a model in predicting continuous outcomes. 
+     * It is particularly useful in evaluating the performance of regression models or any model that outputs continuous values,
+     * 
+     */
     static void rmsnorm(float[] o, float[] x, FloatBuffer weight, int size) {
         // calculate sum of squares
         float ss = 0.0f;
         for (int j = 0; j < size; j++) {
             ss += x[j] * x[j];
         }
+
+        // Sum of squares
         ss /= size;
         ss += 1e-5f;
         ss = 1.0f / (float) Math.sqrt(ss);
@@ -289,41 +375,23 @@ class Llama2 {
         }
     }
 
-    static final boolean USE_VECTOR_API = "true".equalsIgnoreCase(System.getProperty("llama2.VectorAPI", "true"));
-
+    /**
+     * Removed java21 approach
+     * 
+     * @param xout
+     * @param x
+     * @param w
+     * @param n
+     * @param d
+     */
     static void matmul(float[] xout, float[] x, FloatBuffer w, int n, int d) {
         // W (d,n) @ x (n,) -> xout (d,)
-        // by far the most amount of time is spent inside this little function
-        MemorySegment wSegment = MemorySegment.ofBuffer(w);
-        IntStream.range(0, d).parallel().forEach(i -> {
+        for (int i = 0; i < d; i++) {
             float val = 0f;
             int j = 0;
-            if (USE_VECTOR_API) {
-                VectorSpecies<Float> species = FloatVector.SPECIES_256;
-                FloatVector sum0 = FloatVector.zero(species);
-                FloatVector sum1 = FloatVector.zero(species);
-                FloatVector sum2 = FloatVector.zero(species);
-                FloatVector sum3 = FloatVector.zero(species);
-                int width = species.length();
-                int upperBound = n - n % (4 * width);
-                for (; j < upperBound; j += 4 * width) {
-                    var wj0 = FloatVector.fromMemorySegment(species, wSegment, (i * n + j + 0 * width) * Float.BYTES, ByteOrder.LITTLE_ENDIAN);
-                    var wj1 = FloatVector.fromMemorySegment(species, wSegment, (i * n + j + 1 * width) * Float.BYTES, ByteOrder.LITTLE_ENDIAN);
-                    var wj2 = FloatVector.fromMemorySegment(species, wSegment, (i * n + j + 2 * width) * Float.BYTES, ByteOrder.LITTLE_ENDIAN);
-                    var wj3 = FloatVector.fromMemorySegment(species, wSegment, (i * n + j + 3 * width) * Float.BYTES, ByteOrder.LITTLE_ENDIAN);
-                    var xj0 = FloatVector.fromArray(species, x, j + 0 * width);
-                    var xj1 = FloatVector.fromArray(species, x, j + 1 * width);
-                    var xj2 = FloatVector.fromArray(species, x, j + 2 * width);
-                    var xj3 = FloatVector.fromArray(species, x, j + 3 * width);
-                    sum0 = wj0.fma(xj0, sum0);
-                    sum1 = wj1.fma(xj1, sum1);
-                    sum2 = wj2.fma(xj2, sum2);
-                    sum3 = wj3.fma(xj3, sum3);
-                }
-                val = sum0.add(sum1).add(sum2).add(sum3).reduceLanes(VectorOperators.ADD);
-            }
 
-            // Graal's auto-vectorization.
+            // Vectorization is not possible in Java 8, so we handle it manually.
+            // Graal's auto-vectorization. (unrolled loop)
             int upperBound = n & ~3;
             float[] sum = new float[4];
             for (; j < upperBound; j += sum.length) {
@@ -334,18 +402,29 @@ class Llama2 {
             }
             val += sum[0] + sum[1] + sum[2] + sum[3];
 
+            // Handle any remaining elements
             for (; j < n; j++) {
                 val += w.get(i * n + j) * x[j];
             }
             xout[i] = val;
-        });
+        }
     }
 
+    /**
+     * Important module  with transformer input.
+     * 
+     * @param transformer
+     * @param token
+     * @param pos
+     * @return
+     */
     static float[] forward(Transformer transformer, int token, int pos) {
-        // a few convenience variables
+
+        // a few convenience variables (p is config)
         Config p = transformer.config;
         Weights w = transformer.weights;
         RunState s = transformer.state;
+
         int dim = p.dim;
         int hidden_dim = p.hidden_dim;
         int head_size = p.head_size;
@@ -355,9 +434,17 @@ class Llama2 {
         // copy the token embedding into x
         w.token_embedding_table.get(token * dim, s.x, 0, dim);
 
+        // Common layers is 6
+        System.out.println();
+        System.out.println("In forward operation :: p.n_layers: " + p.n_layers);
+        System.out.println("====, rmsnorm, matmul");
+
         // forward all the layers
         for (int l = 0; l < p.n_layers; l++) {
+        
 
+            System.out.println("  [FORWARD] -->");
+            System.out.println("Enter looping l=" + l + " for rms: "+w.rms_att_weight[l].get(0));
             // attention rmsnorm
             rmsnorm(s.xb, s.x, w.rms_att_weight[l], dim);
 
@@ -384,10 +471,9 @@ class Llama2 {
             }
 
             // save key,value at this time step (pos) to our kv cache
-            //int loff = l * p.seq_len * kv_dim; // kv cache layer offset for convenience
+            // int loff = l * p.seq_len * kv_dim; // kv cache layer offset for convenience
             System.arraycopy(s.k, 0, s.key_cache[l], pos * kv_dim, kv_dim);
             System.arraycopy(s.v, 0, s.value_cache[l], pos * kv_dim, kv_dim);
-
 
             final int curLayer = l;
 
@@ -490,7 +576,13 @@ class Llama2 {
 // The Byte Pair Encoding (BPE) Tokenizer that translates strings <-> tokens
 
     static String decode(Tokenizer t, int prev_token, int token) {
+
+        System.out.println("[Decode --> ] (index in vocab from tranformer) prev_token=" + prev_token + " -> token=" + token);
+
         String piece = t.vocab[token];
+
+        System.out.println("[Decode --> ] (index in vocab from tranformer) " + piece + " -> token=" + token);
+
         // following BOS (1) token, sentencepiece decoder strips any leading whitespace (see PR #89)
         if (prev_token == 1 && piece.charAt(0) == ' ') {
             piece = piece.substring(1);
@@ -632,6 +724,15 @@ class Llama2 {
 // ----------------------------------------------------------------------------
 // generation loop
 
+    /**
+     * Text generation loop.
+     * 
+     * @param transformer
+     * @param tokenizer
+     * @param sampler
+     * @param prompt
+     * @param steps
+     */
     static void generate(Transformer transformer, Tokenizer tokenizer, Sampler sampler, String prompt, int steps) {
         String empty_prompt = "";
         if (prompt == null) {
@@ -744,6 +845,16 @@ class Llama2 {
         }
     }
 
+    /**
+     * Sample top-p sampling, samples from smallest set of tokens that exceed probability topp.
+     * 
+     * @param probabilities
+     * @param n
+     * @param topp
+     * @param indices
+     * @param coin
+     * @return
+     */
     static int sample_topp(float[] probabilities, int n, float topp, int[] indices, float coin) {
         // top-p sampling (or "nucleus sampling") samples from the smallest set of
         // tokens that exceed probability topp. This way we never sample tokens that
@@ -945,15 +1056,26 @@ class Llama2 {
         System.exit(1);
     }
 
+    /**
+     * Main entry point for program
+     * 
+     * @param args
+     * @throws IOException
+     */
     public static void main(String[] args) throws IOException {
+
         // default parameters
         String checkpoint_path = null; // e.g. out/model.bin
         String tokenizer_path = "tokenizer.bin";
+
         float temperature = 1.0f;    // 0.0 = greedy deterministic. 1.0 = original. don't set higher
         float topp = 0.9f;           // top-p in nucleus sampling. 1.0 = off. 0.9 works well, but slower
         long rng_seed = 0;           // seed rng with time by default
         int steps = 256;             // max number of steps to run for, 0: use seq_len
+
         String prompt = null;        // prompt string
+
+        // Generate will generate a simple auto chat session.   Chat will look for a prompt from end user
         String mode = "generate";    // generate|chat
         String system_prompt = null; // the (optional) system prompt to use in chat mode
 
@@ -968,17 +1090,28 @@ class Llama2 {
             if (i + 1 >= args.length) { error_usage(); } // must have arg after flag
             if (args[i].charAt(0) != '-') { error_usage(); } // must start with dash
             if (args[i].length() != 2) { error_usage(); } // must be -x (one dash, one letter)
+
             // read in the args
-            switch (args[i].charAt(1)) {
-                case 't' -> temperature = Float.parseFloat(args[i + 1]);
-                case 'p' -> topp = Float.parseFloat(args[i + 1]);
-                case 's' -> rng_seed = Integer.parseInt(args[i + 1]);
-                case 'n' -> steps = Integer.parseInt(args[i + 1]);
-                case 'i' -> prompt = args[i + 1];
-                case 'z' -> tokenizer_path = args[i + 1];
-                case 'm' -> mode = args[i + 1];
-                case 'y' -> system_prompt = args[i + 1];
-                default -> error_usage();
+            // Converted from high level lang approach to java6-8
+            if (args[i].charAt(1) == 't') {
+                temperature = Float.parseFloat(args[i + 1]);
+            } else if (args[i].charAt(1) == 'p') {
+                topp = Float.parseFloat(args[i + 1]);
+            } else if (args[i].charAt(1) == 's') {
+                ng_seed = Integer.parseInt(args[i + 1]);
+            } else if (args[i].charAt(1) == 'n') {
+                teps = Integer.parseInt(args[i + 1]);
+            } else if (args[i].charAt(1) == 'i') {
+                prompt = args[i + 1];
+            } else if (args[i].charAt(1) == 'z') {
+                tokenizer_path = args[i + 1];
+            } else if (args[i].charAt(1) == 'm') {
+                mode = args[i + 1];
+            } else if (args[i].charAt(1) == 'y') {
+                system_prompt = args[i + 1];
+
+            } else {
+                error_usage();
             }
         }
 
@@ -996,26 +1129,34 @@ class Llama2 {
             steps = 0;
         }
 
-        // build the Transformer via the model .bin file
-        Transformer transformer = new Transformer(checkpoint_path);
+        // Build the Transformer via the model .bin file, what is in the tranformer?
+
+        System.out.println("From Llama2 At Transformer - checkpoint_path="+checkpoint_path);
+
+        final Transformer transformer = new Transformer(checkpoint_path);
         if (steps == 0 || steps > transformer.config.seq_len) {
             steps = transformer.config.seq_len; // ovrerride to ~max length
         }
 
-        // build the Tokenizer via the tokenizer .bin file
-        Tokenizer tokenizer = new Tokenizer(tokenizer_path, transformer.config.vocab_size);
+        // Build the Tokenizer via the tokenizer .bin file
+        System.out.println("From Llama2 At Tokenizer - checkpoint_path="+tokenizer_path + " ;  transformer.config.vocab_size=" + transformer.config.vocab_size);
+        
+        final Tokenizer tokenizer = new Tokenizer(tokenizer_path, transformer.config.vocab_size);
 
-        // build the Sampler
+        // Build the Sampler
         Sampler sampler = new Sampler(transformer.config.vocab_size, temperature, topp, rng_seed);
 
-        // run!
-        switch (mode) {
-            case "generate" -> generate(transformer, tokenizer, sampler, prompt, steps);
-            case "chat" -> chat(transformer, tokenizer, sampler, prompt, system_prompt, steps);
-            default -> {
-                System.err.println("unknown mode: " + mode);
+        System.out.println(">>> MAIN : [generate based on some sampe] mode = " + mode);
+
+        // run! so we generate text or feed in chat text
+        if ("generate".equalsIgnoreCase(mode)) {
+            generate(transformer, tokenizer, sampler, prompt, steps);
+
+        } else if ("chat".equalsIgnoreCase(mode)) {
+            chat(transformer, tokenizer, sampler, prompt, system_prompt, steps);
+        } else {
+            System.err.println("unknown mode: " + mode);
                 error_usage();
-            }
         }
     }
 }
