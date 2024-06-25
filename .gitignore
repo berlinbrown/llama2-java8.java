@@ -31,3 +31,5 @@ target
 *.pyc
 
 TinyStories_all_data
+
+openwebtext

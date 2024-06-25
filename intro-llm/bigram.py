@@ -1,4 +1,3 @@
-# intro
 import torch
 import torch.nn as nn
 from torch.nn import functional as F
@@ -11,26 +10,19 @@ max_iters = 1000
 learning_rate = 3e-4
 eval_iters = 250
 
-
 with open('wizard_of_oz.txt', 'r', encoding='utf-8') as f:
     text = f.read()
 
 chars = sorted(set(text))
-
-# This is an enumeation of our wizard oz vocab but as chars
 print(chars)
 vocab_size = len(chars)
 
-print(vocab_size)
-
 string_to_int = { ch:i for i,ch in enumerate(chars) }
 int_to_string = { i:ch for i,ch in enumerate(chars) }
-
 encode = lambda s: [string_to_int[c] for c in s]
 decode = lambda l: ''.join([int_to_string[i] for i in l])
 
 data = torch.tensor(encode(text), dtype=torch.long)
-
 print(data[:100])
 
 n = int(0.8*len(data))
@@ -52,6 +44,7 @@ print(x)
 print('targets:')
 print(y)
 
+
 @torch.no_grad()
 def estimate_loss():
     out = {}
@@ -65,6 +58,7 @@ def estimate_loss():
         out[split] = losses.mean()
     model.train()
     return out
+
 
 class BigramLanguageModel(nn.Module):
     def __init__(self, vocab_size):
@@ -99,7 +93,6 @@ class BigramLanguageModel(nn.Module):
             # append sampled index to the running sequence
             index = torch.cat((index, index_next), dim=1) # (B, T+1)
         return index
-    
 
 model = BigramLanguageModel(vocab_size)
 m = model.to(device)
@@ -107,6 +100,7 @@ m = model.to(device)
 context = torch.zeros((1,1), dtype=torch.long, device=device)
 generated_chars = decode(m.generate(context, max_new_tokens=500)[0].tolist())
 print(generated_chars)
+
 
 
 # create a PyTorch optimizer
@@ -125,9 +119,10 @@ for iter in range(max_iters):
     optimizer.zero_grad(set_to_none=True)
     loss.backward()
     optimizer.step()
+    
+print(loss.item())
 
 
 context = torch.zeros((1,1), dtype=torch.long, device=device)
 generated_chars = decode(m.generate(context, max_new_tokens=500)[0].tolist())
 print(generated_chars)
-print(loss.item())
