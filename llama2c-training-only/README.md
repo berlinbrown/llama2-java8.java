@@ -101,6 +101,13 @@ Code is really simply this:
         print(f"{data_filename} already exists, skipping download...")
 ```
 
+We can also replace text with our own custom data:
+
+```bash
+gsed -i 's/Lily/Berlin/g' data01.json 
+gsed -i 's/Lily/Berlin/g' data01.json
+```
+
 The size of the zipped content is 1.5 gigs
 
 Then we pretokenize it
@@ -164,6 +171,30 @@ Between 9am to 12:45pm EST, the following
 
 Also there is a file in ./out/
 ckpt.pt		model.bin
+
+Testing example where my name is part of the data:
+
+So we prime the data and then the response will include continuation based on the start:
+
+input_text = "Lily and Ben built a fort"
+
+Example output:
+
+"Lily and Ben built a fort in the backyard. They used blankets, chairs, and cushions to create a cozy space. Inside, they imagined all sorts of adventures and spent the afternoon playing and telling stories."
+
+Using the example input "Lily and Ben built a fort," the model generates a continuation of the story, adding context and details. This is useful for creating engaging content or extending prompts in creative ways.
+
+Here I replaced Lily with Berlin
+
+```text
+ python3 sample.py --checkpoint=./out/ckpt.pt --start='Once upon a time there was little girl name'
+Overriding: checkpoint = ./out/ckpt.pt
+Overriding: start = Once upon a time there was little girl name
+Once upon a time there was little girl name. She loved to play outside in the park with her dad your world, they asked her?"
+As they played Tom were a beautiful, so she had lots of fun.
+When they decided to see to the park, her dad was so excited candy that she was very sad, your soft ch named Berlin's mom, said, "Thank you, Berlin and tookak people to the end much fun by the bird." 
+After she was very this and said, "
+```
 
 ```
 

@@ -34,11 +34,20 @@ from export import model_export
 # -----------------------------------------------------------------------------
 # I/O
 out_dir = "out"
-eval_interval = 2000
+
+# On a macbook 2017, 2018 with cpu only takes about 12 seconds per iteration
+# So: 2000 * 100 * 12 seconds = total expected time
+# Looks like save checkpoint at eval_interval
+# Change accordingly
+# Default eval_interval = 2000, eval_iters = 100
+eval_interval = 200
 log_interval = 1
-eval_iters = 100
+eval_iters = 20
+
 eval_only = False  # if True, script exits right after the first eval
-always_save_checkpoint = False  # if True, always save a checkpoint after each eval
+
+always_save_checkpoint = True  # if True, always save a checkpoint after each eval
+
 init_from = "scratch"  # 'scratch' or 'resume'
 
 # wandb logging
@@ -62,7 +71,7 @@ gradient_accumulation_steps = 4  # used to simulate larger batch sizes
 learning_rate = 5e-4  # max learning rate
 
 # Max was 100,0000
-max_iters = 8000  # total number of training iterations
+max_iters = 3000  # total number of training iterations
 weight_decay = 1e-1
 beta1 = 0.9
 beta2 = 0.95
@@ -166,7 +175,7 @@ if init_from == "scratch":
     gptconf = ModelArgs(**model_args)
     model = Transformer(gptconf)
 elif init_from == "resume":
-    print(f"Resuming training from {out_dir}")
+    print(f"[my-debug] Resuming training from {out_dir}")
     # resume training from a checkpoint.
     ckpt_path = os.path.join(out_dir, "ckpt.pt")
     checkpoint = torch.load(ckpt_path, map_location=device)
@@ -263,10 +272,13 @@ while True:
     for param_group in optimizer.param_groups:
         param_group["lr"] = lr
 
+    # This is included in loop
+    print(f"  Entering loop - iter_num over eval_interval - iter_num = {iter_num} , eval_interval = {eval_interval} ")
     # evaluate the loss on train/val sets and write checkpoints
     if iter_num % eval_interval == 0 and master_process:
+
         losses = estimate_loss()
-        print(f"step {iter_num}: train loss {losses['train']:.4f}, val loss {losses['val']:.4f}")
+        print(f"[my-debug] step {iter_num}: train loss {losses['train']:.4f}, val loss {losses['val']:.4f}")
         if wandb_log:
             try:
                 wandb.log(
@@ -281,6 +293,7 @@ while True:
                 )
             except Exception as e:
                 print(f"logging to wandb failed: {e}")
+
         if losses["val"] < best_val_loss or always_save_checkpoint:
             best_val_loss = losses["val"]
             if iter_num > 0:
@@ -292,11 +305,18 @@ while True:
                     "best_val_loss": best_val_loss,
                     "config": config,
                 }
-                print(f"saving checkpoint to {out_dir}")
+                print(f"[my-debug >>>] [if losses.val < best_val_loss] saving checkpoint to {out_dir}")
                 torch.save(checkpoint, os.path.join(out_dir, "ckpt.pt"))
                 model_export(raw_model, os.path.join(out_dir, "model.bin"), version=0)
+        else:
+            best_val_loss = losses["val"]
+            print(f"[my-debug >>>] NOT saving checkpoint to {out_dir} -- {best_val_loss}")
+
     if iter_num == 0 and eval_only:
+        print("break on iter num == 0 and eval only")
         break
+    else:
+        print("NOT break on iter num == 0 and eval only")
 
     # forward backward update, with optional gradient accumulation to simulate larger batch size
     # and using the GradScaler if data type is float16
@@ -311,14 +331,17 @@ while True:
             logits = model(X, Y)
             loss = raw_model.last_loss
             loss = loss / gradient_accumulation_steps
+
         # immediately async prefetch next batch while model is doing the forward pass on the GPU
         X, Y = next(train_batch_iter)
         # backward pass, with gradient scaling if training in fp16
         scaler.scale(loss).backward()
+
     # clip the gradient
     if grad_clip != 0.0:
         scaler.unscale_(optimizer)
         torch.nn.utils.clip_grad_norm_(model.parameters(), grad_clip)
+
     # step the optimizer and scaler if training in fp16
     scaler.step(optimizer)
     scaler.update()
@@ -336,7 +359,7 @@ while True:
             mfu = raw_model.estimate_mfu(batch_size * gradient_accumulation_steps, dt)
             running_mfu = mfu if running_mfu == -1.0 else 0.9 * running_mfu + 0.1 * mfu
         print(
-            f"{iter_num} | loss {lossf:.4f} | lr {lr:e} | {dt*1000:.2f}ms | mfu {running_mfu*100:.2f}%"
+            f"  [my-debug >>] - inner loop - {iter_num} | loss {lossf:.4f} | lr {lr:e} | {dt*1000:.2f}ms | mfu {running_mfu*100:.2f}%"
         )
     iter_num += 1
     local_iter_num += 1
@@ -344,6 +367,8 @@ while True:
     # termination conditions
     if iter_num > max_iters:
         break
+    else:
+        print("Not reaching iter num max iters")
 
 if ddp:
     destroy_process_group()
